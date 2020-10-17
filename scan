@@ -22,6 +22,6 @@ def isUp(hostname):
 
     return isUpBool
 
-print(isUp("192.168.0.1")) #Pings local router
-print(isUp("192.168.0.2")) #Pings a local computer
-print(isUp("192.168.0.150")) #Pings a local computer
+print(isUp("10.0.0.1")) #Pings local router
+print(isUp("192.168.0.1")) #Pings a local computer
+print(isUp("172.16.0.1")) #Pings a local computer
