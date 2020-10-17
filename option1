@@ -1,0 +1,29 @@
+  
+import os
+import platform
+
+
+def isUp(hostname):
+
+    giveFeedback = False
+
+    if platform.system() == "Windows":
+        response = os.system("ping "+hostname+" -n 1")
+    else:
+        response = os.system("ping -c 1 " + hostname)
+
+    isUpBool = False
+    if response == 0:
+        if giveFeedback:
+            print hostname, 'is up!'
+        isUpBool = True
+    else:
+        if giveFeedback:
+            print hostname, 'is down!'
+
+    return isUpBool
+
+print(isUp("192.168.1.1")) #Pings local router
+print(isUp("192.168.1.150")) #Pings local pc
+print(isUp("192.168.1.254")) #Pings local switch
+##how do you generate this as a list
