@@ -3,9 +3,9 @@
       
 def print_menu():       ## CHOOSE
     
-    print "1. 10.0.0.0/8"
-    print "2. 192.168.1.1/24"
-    print "3. 172.16.0.0/12"
+    print "1. Ping a single IP address"
+    print "2. Ping a subnet"
+    print "3. Ping specific ports"
   
 loop=True      
   
@@ -14,19 +14,21 @@ while loop:          ## While loop which will keep going until loop = False
     choice = input("Enter your choice [1-3]: ")
     
     if choice==1:     
-        print "10.0.0.0"
-        ## This needs to go to the next function
+        print "Ping a single IP address"
+         wait=5
+         import option2
+        execfile('littleping.py')
         
         
     elif choice==2:
-        print "192.168.1.1"
+        print "Ping a subnet"
         wait=5
         import option2
-        execfile('option2.py')
+        execfile('lanping.py')
 
         
     elif choice==3:
-        print "172.16.0.0"
+        print "Ping specific ports"
         ## This needs to go to the next function
   
         loop=False # This will make the while loop to end as not value of loop is set to False
