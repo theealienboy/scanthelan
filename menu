@@ -1,50 +1,40 @@
-## Text menu in Python
+#Menu
+import csv
+import sys
 
-      
-def print_menu():       ## CHOOSE
-    
-    print "1. Ping a single IP address"
-    print "2. Ping a subnet"
-    print "3. Ping specific ports"
-  
-loop=True      
-  
-while loop:          ## While loop which will keep going until loop = False
-    print_menu()    ## Displays menu
-    choice = input("Enter your choice [1-3]: ")
-    
-    if choice==1:     
-        print "Ping a single IP address"
-         wait=5
-         import option2
+def main():
+   menu()
+
+
+def menu():
+    print("************Welcome to Scan the LAN **************")
+    print()
+
+    choice = input("""
+                      1: Ping Single IP
+                      2: Ping LAN
+                      3: PING PORT
+
+                      Please enter your choice: """)
+
+    if choice == "1" or choice =="1":
+        import littleping
         execfile('littleping.py')
-        
-        
-    elif choice==2:
-        print "Ping a subnet"
-        wait=5
-        import option2
+    elif choice == "2" or choice =="2":
+        import lanping
         execfile('lanping.py')
-
-        
-    elif choice==3:
-        print "Ping specific ports"
-        ## This needs to go to the next function
-  
-        loop=False # This will make the while loop to end as not value of loop is set to False
+    elif choice=="3" or choice=="3":
+        sys.exit
     else:
-        # Any integer inputs other than values 1-3 we print an error message
-        raw_input("Wrong option selection. Enter any key to try again..")
+        print("You must only select either 1,2 or 3")
+        print("Please try again")
+        menu()
 
-
-      
-
-
-      
-
-
-      
-
-
-
-      
+def register():
+   pass
+    
+def login():
+   pass
+    
+#the program is initiated, so to speak, here
+main()
