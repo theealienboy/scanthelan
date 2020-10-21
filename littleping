@@ -1,0 +1,8 @@
+import os
+
+print('(^_^) )' *60)
+ip_to_check = input('IP TO CHECK: ')
+
+os.system('ping -n 4 {}'.format(ip_to_check))
+
+print('(^_^) )' *60)
